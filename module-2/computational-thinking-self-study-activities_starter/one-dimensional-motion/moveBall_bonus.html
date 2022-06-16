@@ -1,0 +1,150 @@
+<div
+  id="ball1"
+  style="
+    z-index: 5;
+    position: absolute;
+    left: 25px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: green;
+  "
+></div>
+
+<div
+  id="ball2"
+  style="
+    z-index: 5;
+    position: absolute;
+    left: 90px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: blue;
+  "
+></div>
+
+<div
+  id="ball3"
+  style="
+    z-index: 5;
+    position: absolute;
+    left: 150px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: red;
+  "
+></div>
+
+<div
+  id="ball4"
+  style="
+    z-index: 5;
+    position: absolute;
+    left: 210px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: orange;
+  "
+></div>
+
+<div
+  id="ball5"
+  style="
+    z-index: 5;
+    position: absolute;
+    left: 270px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: cornflowerblue;
+  "
+></div>
+
+<div
+  style="
+    z-index: 5;
+    position: absolute;
+    left: 0px;
+    top: 450px;
+    width: 340px;
+    height: 50px;
+    background: rgb(70, 76, 89);
+  "
+></div>
+
+<script>
+  function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  var TOP = 0;
+  var BOTTOM = 400;
+
+  var reverse1 = false;
+  var reverse2 = false;
+  var reverse3 = false;
+  var reverse4 = false;
+  var reverse5 = false;
+
+  var velocity1 = 20;
+  var velocity2 = 50;
+  var velocity3 = 40;
+  var velocity4 = 100;
+  var velocity5 = 80;
+
+  var position1 = 0;
+  var position2 = 0;
+  var position3 = 0;
+  var position4 = 0;
+  var position5 = 0;
+
+  var ball1 = document.getElementById("ball1");
+  var ball2 = document.getElementById("ball2");
+  var ball3 = document.getElementById("ball3");
+  var ball4 = document.getElementById("ball4");
+  var ball5 = document.getElementById("ball5");
+
+  function moveBalls() {
+    !reverse1 ? (position1 += velocity1) : (position1 -= velocity1);
+    ball1.style.top = `${position1}px`;
+    if (position1 === TOP || position1 === BOTTOM) {
+      reverse1 = !reverse1;
+    }
+
+    !reverse2 ? (position2 += velocity2) : (position2 -= velocity2);
+    ball2.style.top = `${position2}px`;
+    if (position2 === TOP || position2 === BOTTOM) {
+      reverse2 = !reverse2;
+    }
+
+    !reverse3 ? (position3 += velocity3) : (position3 -= velocity3);
+    ball3.style.top = `${position3}px`;
+    if (position3 === TOP || position3 === BOTTOM) {
+      reverse3 = !reverse3;
+    }
+
+    !reverse4 ? (position4 += velocity4) : (position4 -= velocity4);
+    ball4.style.top = `${position4}px`;
+    if (position4 === TOP || position4 === BOTTOM) {
+      reverse4 = !reverse4;
+    }
+
+    !reverse5 ? (position5 += velocity5) : (position5 -= velocity5);
+    ball5.style.top = `${position5}px`;
+    if (position5 === TOP || position5 === BOTTOM) {
+      reverse5 = !reverse5;
+    }
+  }
+
+  setInterval(moveBalls, 250);
+  // YOUR CODE
+  // ----------------
+</script>
