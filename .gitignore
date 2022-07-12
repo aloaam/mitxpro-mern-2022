@@ -1,3 +1,7 @@
+# Added by the user
+/.vscode
+
+
 # compiled output
 /dist
 /tmp
